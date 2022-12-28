@@ -1,0 +1,777 @@
+{
+  "result": "OK",
+  "data": {
+    "documents": {
+      "OSV:GHSA-9JMQ-RX5F-8JWQ": {
+        "id": "OSV:GHSA-9JMQ-RX5F-8JWQ",
+        "vendorId": null,
+        "type": "osv",
+        "bulletinFamily": "software",
+        "title": "nbconvert vulnerable to cross-site scripting (XSS) via multiple exploit paths",
+        "description": "Cross-linking to https",
+        "published": "2022-08-10T17:51:53",
+        "modified": "2022-12-14T05:15:39",
+        "cvss": {
+          "score": 0.0,
+          "vector": "NONE"
+        },
+        "cvss2": {},
+        "cvss3": {
+          "cvssV3": {
+            "version": "3.1",
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "attackVector": "NETWORK",
+            "attackComplexity": "LOW",
+            "privilegesRequired": "LOW",
+            "userInteraction": "REQUIRED",
+            "scope": "CHANGED",
+            "confidentialityImpact": "LOW",
+            "integrityImpact": "LOW",
+            "availabilityImpact": "NONE",
+            "baseScore": 5.4,
+            "baseSeverity": "MEDIUM"
+          },
+          "exploitabilityScore": 2.3,
+          "impactScore": 2.7
+        },
+        "href": "https://osv.dev/vulnerability/GHSA-9jmq-rx5f-8jwq",
+        "reporter": "Google",
+        "references": [
+          "https://github.com/jupyter/nbconvert/security/advisories/GHSA-9jmq-rx5f-8jwq",
+          "https://nvd.nist.gov/vuln/detail/CVE-2021-32862",
+          "https://github.com/jupyter/nbconvert",
+          "https://github.com/pypa/advisory-database/tree/main/vulns/nbconvert/PYSEC-2022-249.yaml"
+        ],
+        "cvelist": [
+          "CVE-2021-32862"
+        ],
+        "immutableFields": [],
+        "lastseen": "2022-12-14T05:15:42",
+        "viewCount": 6,
+        "enchantments": {
+          "dependencies": {
+            "references": [
+              {
+                "idList": [
+                  "VERACODE:36650"
+                ],
+                "type": "veracode"
+              },
+              {
+                "idList": [
+                  "CVE-2021-32862"
+                ],
+                "type": "cve"
+              },
+              {
+                "idList": [
+                  "OSV:PYSEC-2022-249"
+                ],
+                "type": "osv"
+              },
+              {
+                "idList": [
+                  "GHSA-9JMQ-RX5F-8JWQ"
+                ],
+                "type": "github"
+              },
+              {
+                "idList": [
+                  "UB:CVE-2021-32862"
+                ],
+                "type": "ubuntucve"
+              }
+            ]
+          },
+          "score": {
+            "value": 0.0,
+            "vector": "NONE"
+          },
+          "affected_software": {
+            "major_version": [
+              {
+                "name": "nbconvert",
+                "version": 6
+              },
+              {
+                "name": "nbconvert",
+                "version": 6
+              },
+              {
+                "name": "nbconvert",
+                "version": 5
+              },
+              {
+                "name": "nbconvert",
+                "version": 5
+              },
+              {
+                "name": "nbconvert",
+                "version": 5
+              },
+              {
+                "name": "nbconvert",
+                "version": 6
+              },
+              {
+                "name": "nbconvert",
+                "version": 6
+              },
+              {
+                "name": "nbconvert",
+                "version": 6
+              },
+              {
+                "name": "nbconvert",
+                "version": 6
+              },
+              {
+                "name": "nbconvert",
+                "version": 6
+              },
+              {
+                "name": "nbconvert",
+                "version": 4
+              },
+              {
+                "name": "nbconvert",
+                "version": 6
+              },
+              {
+                "name": "nbconvert",
+                "version": 6
+              },
+              {
+                "name": "nbconvert",
+                "version": 5
+              },
+              {
+                "name": "nbconvert",
+                "version": 6
+              },
+              {
+                "name": "nbconvert",
+                "version": 0
+              },
+              {
+                "name": "nbconvert",
+                "version": 5
+              },
+              {
+                "name": "nbconvert",
+                "version": 6
+              },
+              {
+                "name": "nbconvert",
+                "version": 6
+              },
+              {
+                "name": "nbconvert",
+                "version": 5
+              },
+              {
+                "name": "nbconvert",
+                "version": 5
+              },
+              {
+                "name": "nbconvert",
+                "version": 6
+              },
+              {
+                "name": "nbconvert",
+                "version": 6
+              },
+              {
+                "name": "nbconvert",
+                "version": 6
+              },
+              {
+                "name": "nbconvert",
+                "version": 5
+              },
+              {
+                "name": "nbconvert",
+                "version": 5
+              },
+              {
+                "name": "nbconvert",
+                "version": 6
+              },
+              {
+                "name": "nbconvert",
+                "version": 6
+              },
+              {
+                "name": "nbconvert",
+                "version": 6
+              },
+              {
+                "name": "nbconvert",
+                "version": 6
+              },
+              {
+                "name": "nbconvert",
+                "version": 6
+              },
+              {
+                "name": "nbconvert",
+                "version": 6
+              },
+              {
+                "name": "nbconvert",
+                "version": 6
+              },
+              {
+                "name": "nbconvert",
+                "version": 6
+              },
+              {
+                "name": "nbconvert",
+                "version": 6
+              },
+              {
+                "name": "nbconvert",
+                "version": 4
+              },
+              {
+                "name": "nbconvert",
+                "version": 6
+              },
+              {
+                "name": "nbconvert",
+                "version": 4
+              },
+              {
+                "name": "nbconvert",
+                "version": 5
+              },
+              {
+                "name": "nbconvert",
+                "version": 6
+              },
+              {
+                "name": "nbconvert",
+                "version": 6
+              },
+              {
+                "name": "nbconvert",
+                "version": 6
+              },
+              {
+                "name": "nbconvert",
+                "version": 6
+              },
+              {
+                "name": "nbconvert",
+                "version": 6
+              },
+              {
+                "name": "nbconvert",
+                "version": 5
+              },
+              {
+                "name": "nbconvert",
+                "version": 6
+              },
+              {
+                "name": "nbconvert",
+                "version": 5
+              },
+              {
+                "name": "nbconvert",
+                "version": 4
+              },
+              {
+                "name": "nbconvert",
+                "version": 6
+              },
+              {
+                "name": "nbconvert",
+                "version": 6
+              },
+              {
+                "name": "nbconvert",
+                "version": 5
+              }
+            ]
+          },
+          "vulnersScore": 0.0
+        },
+        "_state": {
+          "score": 1670995089,
+          "dependencies": 1670994968,
+          "affected_software_major_version": 1670995937
+        },
+        "_internal": {
+          "score_hash": "cf696562930f5050caa9e5b98e94b61c"
+        },
+        "affectedSoftware": [
+          {
+            "version": "0.0.0",
+            "operator": "eq",
+            "name": "nbconvert"
+          },
+          {
+            "version": "4.0.0",
+            "operator": "eq",
+            "name": "nbconvert"
+          },
+          {
+            "version": "4.1.0",
+            "operator": "eq",
+            "name": "nbconvert"
+          },
+          {
+            "version": "4.2.0",
+            "operator": "eq",
+            "name": "nbconvert"
+          },
+          {
+            "version": "4.3.0",
+            "operator": "eq",
+            "name": "nbconvert"
+          },
+          {
+            "version": "5.0.0",
+            "operator": "eq",
+            "name": "nbconvert"
+          },
+          {
+            "version": "5.0.0b1",
+            "operator": "eq",
+            "name": "nbconvert"
+          },
+          {
+            "version": "5.1.0",
+            "operator": "eq",
+            "name": "nbconvert"
+          },
+          {
+            "version": "5.1.1",
+            "operator": "eq",
+            "name": "nbconvert"
+          },
+          {
+            "version": "5.2.1",
+            "operator": "eq",
+            "name": "nbconvert"
+          },
+          {
+            "version": "5.3.0",
+            "operator": "eq",
+            "name": "nbconvert"
+          },
+          {
+            "version": "5.3.1",
+            "operator": "eq",
+            "name": "nbconvert"
+          },
+          {
+            "version": "5.4.0",
+            "operator": "eq",
+            "name": "nbconvert"
+          },
+          {
+            "version": "5.4.1",
+            "operator": "eq",
+            "name": "nbconvert"
+          },
+          {
+            "version": "5.4.1.dev0",
+            "operator": "eq",
+            "name": "nbconvert"
+          },
+          {
+            "version": "5.5.0",
+            "operator": "eq",
+            "name": "nbconvert"
+          },
+          {
+            "version": "5.6.0",
+            "operator": "eq",
+            "name": "nbconvert"
+          },
+          {
+            "version": "5.6.1",
+            "operator": "eq",
+            "name": "nbconvert"
+          },
+          {
+            "version": "6.0.0",
+            "operator": "eq",
+            "name": "nbconvert"
+          },
+          {
+            "version": "6.0.0a0",
+            "operator": "eq",
+            "name": "nbconvert"
+          },
+          {
+            "version": "6.0.0a1",
+            "operator": "eq",
+            "name": "nbconvert"
+          },
+          {
+            "version": "6.0.0a2",
+            "operator": "eq",
+            "name": "nbconvert"
+          },
+          {
+            "version": "6.0.0a3",
+            "operator": "eq",
+            "name": "nbconvert"
+          },
+          {
+            "version": "6.0.0a4",
+            "operator": "eq",
+            "name": "nbconvert"
+          },
+          {
+            "version": "6.0.0a5",
+            "operator": "eq",
+            "name": "nbconvert"
+          },
+          {
+            "version": "6.0.0a6",
+            "operator": "eq",
+            "name": "nbconvert"
+          },
+          {
+            "version": "6.0.0b7",
+            "operator": "eq",
+            "name": "nbconvert"
+          },
+          {
+            "version": "6.0.0rc0",
+            "operator": "eq",
+            "name": "nbconvert"
+          },
+          {
+            "version": "6.0.1",
+            "operator": "eq",
+            "name": "nbconvert"
+          },
+          {
+            "version": "6.0.2",
+            "operator": "eq",
+            "name": "nbconvert"
+          },
+          {
+            "version": "6.0.3",
+            "operator": "eq",
+            "name": "nbconvert"
+          },
+          {
+            "version": "6.0.4",
+            "operator": "eq",
+            "name": "nbconvert"
+          },
+          {
+            "version": "6.0.5",
+            "operator": "eq",
+            "name": "nbconvert"
+          },
+          {
+            "version": "6.0.6",
+            "operator": "eq",
+            "name": "nbconvert"
+          },
+          {
+            "version": "6.0.7",
+            "operator": "eq",
+            "name": "nbconvert"
+          },
+          {
+            "version": "6.1.0",
+            "operator": "eq",
+            "name": "nbconvert"
+          },
+          {
+            "version": "6.1.0rc0",
+            "operator": "eq",
+            "name": "nbconvert"
+          },
+          {
+            "version": "6.1.1b0",
+            "operator": "eq",
+            "name": "nbconvert"
+          },
+          {
+            "version": "6.2.0",
+            "operator": "eq",
+            "name": "nbconvert"
+          },
+          {
+            "version": "6.2.0rc0",
+            "operator": "eq",
+            "name": "nbconvert"
+          },
+          {
+            "version": "6.2.0rc1",
+            "operator": "eq",
+            "name": "nbconvert"
+          },
+          {
+            "version": "6.2.0rc2",
+            "operator": "eq",
+            "name": "nbconvert"
+          },
+          {
+            "version": "6.3.0",
+            "operator": "eq",
+            "name": "nbconvert"
+          },
+          {
+            "version": "6.3.0b0",
+            "operator": "eq",
+            "name": "nbconvert"
+          },
+          {
+            "version": "6.4.0",
+            "operator": "eq",
+            "name": "nbconvert"
+          },
+          {
+            "version": "6.4.1",
+            "operator": "eq",
+            "name": "nbconvert"
+          },
+          {
+            "version": "6.4.2",
+            "operator": "eq",
+            "name": "nbconvert"
+          },
+          {
+            "version": "6.4.3",
+            "operator": "eq",
+            "name": "nbconvert"
+          },
+          {
+            "version": "6.4.4",
+            "operator": "eq",
+            "name": "nbconvert"
+          },
+          {
+            "version": "6.4.5",
+            "operator": "eq",
+            "name": "nbconvert"
+          },
+          {
+            "version": "6.5.0",
+            "operator": "eq",
+            "name": "nbconvert"
+          }
+        ]
+      }
+    },
+    "references": {
+      "OSV:GHSA-9JMQ-RX5F-8JWQ": {
+        "veracode": [
+          {
+            "lastseen": "2022-08-20T06:39:05",
+            "description": "Nbconvert is vulnerable to cross-site scripting. The vulnerability is due to multiple instances where a Jupyter notebook can inject unescaped HTML into the metadata when exported as HTML. An attacker in control of a notebook can inject arbitrary Javascript that will be executed when a user visits the exported notebook.\n",
+            "cvss3": {
+              "exploitabilityScore": 2.3,
+              "cvssV3": {
+                "baseSeverity": "MEDIUM",
+                "confidentialityImpact": "LOW",
+                "attackComplexity": "LOW",
+                "scope": "CHANGED",
+                "attackVector": "NETWORK",
+                "availabilityImpact": "NONE",
+                "integrityImpact": "LOW",
+                "privilegesRequired": "LOW",
+                "baseScore": 5.4,
+                "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+                "version": "3.1",
+                "userInteraction": "REQUIRED"
+              },
+              "impactScore": 2.7
+            },
+            "published": "2022-08-10T18:22:25",
+            "type": "veracode",
+            "title": "Cross Site Scripting (XSS)",
+            "bulletinFamily": "software",
+            "cvss2": {},
+            "cvelist": [
+              "CVE-2021-32862"
+            ],
+            "modified": "2022-08-11T14:43:32",
+            "id": "VERACODE:36650",
+            "href": "https://sca.analysiscenter.veracode.com/vulnerability-database/security/1/1/sid-36650/summary",
+            "cvss": {
+              "score": 0.0,
+              "vector": "NONE"
+            }
+          }
+        ],
+        "github": [
+          {
+            "lastseen": "2022-08-23T17:11:36",
+            "description": "Cross-linking to",
+            "cvss3": {
+              "exploitabilityScore": 2.3,
+              "cvssV3": {
+                "baseSeverity": "MEDIUM",
+                "confidentialityImpact": "LOW",
+                "attackComplexity": "LOW",
+                "scope": "CHANGED",
+                "attackVector": "NETWORK",
+                "availabilityImpact": "NONE",
+                "integrityImpact": "LOW",
+                "privilegesRequired": "LOW",
+                "baseScore": 5.4,
+                "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+                "version": "3.1",
+                "userInteraction": "REQUIRED"
+              },
+              "impactScore": 2.7
+            },
+            "published": "2022-08-10T17:51:53",
+            "type": "github",
+            "title": "nbconvert vulnerable to cross-site scripting (XSS) via multiple exploit paths",
+            "bulletinFamily": "software",
+            "cvss2": {},
+            "cvelist": [
+              "CVE-2021-32862"
+            ],
+            "modified": "2022-08-23T16:59:20",
+            "id": "GHSA-9JMQ-RX5F-8JWQ",
+            "href": "https://github.com/advisories/GHSA-9jmq-rx5f-8jwq",
+            "cvss": {
+              "score": 0.0,
+              "vector": "NONE"
+            }
+          }
+        ],
+        "osv": [
+          {
+            "lastseen": "2022-08-20T17:41:44",
+            "description": "The GitHub Security",
+            "edition": 1,
+            "cvss3": {
+              "exploitabilityScore": 2.3,
+              "cvssV3": {
+                "baseSeverity": "MEDIUM",
+                "confidentialityImpact": "LOW",
+                "attackComplexity": "LOW",
+                "scope": "CHANGED",
+                "attackVector": "NETWORK",
+                "availabilityImpact": "NONE",
+                "integrityImpact": "LOW",
+                "privilegesRequired": "LOW",
+                "baseScore": 5.4,
+                "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+                "version": "3.1",
+                "userInteraction": "REQUIRED"
+              },
+              "impactScore": 2.7
+            },
+            "published": "2022-08-18T19:15:00",
+            "type": "osv",
+            "title": "PYSEC-2022-249",
+            "bulletinFamily": "software",
+            "cvss2": {},
+            "cvelist": [
+              "CVE-2021-32862"
+            ],
+            "modified": "2022-08-20T05:32:49",
+            "id": "OSV:PYSEC-2022-249",
+            "href": "https://osv.dev/vulnerability/PYSEC-2022-249",
+            "cvss": {
+              "score": 0.0,
+              "vector": "NONE"
+            }
+          }
+        ],
+        "ubuntucve": [
+          {
+            "lastseen": "2022-12-09T13:15:32",
+            "description": "The GitHub Security Lab discovered sixteen ways to exploit a cross-site\nscripting vulnerability in nbconvert. When using nbconvert to generate an\nHTML version of a user-controllable notebook, it is possible to inject\narbitrary HTML which may lead to cross-site scripting (XSS) vulnerabilities\nif these HTML notebooks are served by a web server (eg: nbviewer).\n\n#### Notes\n\nAuthor| Note  \n---|---  \n[ccdm94](<https://launchpad.net/~ccdm94>) | all commits that patch this issue can be seen by comparing nbconvert version 6.5.0 and version 6.5.1. (see: https://github.com/jupyter/nbconvert/compare/6.5.0...6.5.1)\n",
+            "cvss3": {
+              "exploitabilityScore": 2.3,
+              "cvssV3": {
+                "baseSeverity": "MEDIUM",
+                "confidentialityImpact": "LOW",
+                "attackComplexity": "LOW",
+                "scope": "CHANGED",
+                "attackVector": "NETWORK",
+                "availabilityImpact": "NONE",
+                "integrityImpact": "LOW",
+                "privilegesRequired": "LOW",
+                "baseScore": 5.4,
+                "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+                "version": "3.1",
+                "userInteraction": "REQUIRED"
+              },
+              "impactScore": 2.7
+            },
+            "published": "2022-08-18T00:00:00",
+            "type": "ubuntucve",
+            "title": "CVE-2021-32862",
+            "bulletinFamily": "info",
+            "cvss2": {},
+            "cvelist": [
+              "CVE-2021-32862"
+            ],
+            "modified": "2022-08-18T00:00:00",
+            "id": "UB:CVE-2021-32862",
+            "href": "https://ubuntu.com/security/CVE-2021-32862",
+            "cvss": {
+              "score": 0.0,
+              "vector": "NONE"
+            }
+          }
+        ],
+        "cve": [
+          {
+            "lastseen": "2022-08-20T05:15:22",
+            "description": "The GitHub Security Lab discovered sixteen ways to exploit a cross-site scripting vulnerability in nbconvert. When using nbconvert to generate an HTML version of a user-controllable notebook, it is possible to inject arbitrary HTML which may lead to cross-site scripting (XSS) vulnerabilities if these HTML notebooks are served by a web server (eg: nbviewer).",
+            "cvss3": {
+              "exploitabilityScore": 2.3,
+              "cvssV3": {
+                "baseSeverity": "MEDIUM",
+                "confidentialityImpact": "LOW",
+                "attackComplexity": "LOW",
+                "scope": "CHANGED",
+                "attackVector": "NETWORK",
+                "availabilityImpact": "NONE",
+                "integrityImpact": "LOW",
+                "privilegesRequired": "LOW",
+                "baseScore": 5.4,
+                "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+                "version": "3.1",
+                "userInteraction": "REQUIRED"
+              },
+              "impactScore": 2.7
+            },
+            "published": "2022-08-18T19:15:00",
+            "type": "cve",
+            "title": "CVE-2021-32862",
+            "cwe": [
+              "CWE-79"
+            ],
+            "bulletinFamily": "NVD",
+            "cvss2": {},
+            "cvelist": [
+              "CVE-2021-32862"
+            ],
+            "modified": "2022-08-20T01:34:00",
+            "cpe": [
+              "cpe:/a:jupyter:nbconvert:6.2.0"
+            ],
+            "id": "CVE-2021-32862",
+            "href": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2021-32862",
+            "cvss": {
+              "score": 0.0,
+              "vector": "NONE"
+            },
+            "cpe23": [
+              "cpe:2.3:a:jupyter:nbconvert:6.2.0:*:*:*:*:python:*:*"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

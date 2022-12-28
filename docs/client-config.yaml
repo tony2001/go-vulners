@@ -1,0 +1,8 @@
+package: v3
+output-options:
+  skip-prune: true
+  include-tags:
+    - v3
+generate:
+  client: true
+output: api/v3/client.go

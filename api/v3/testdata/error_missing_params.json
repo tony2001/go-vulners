@@ -1,0 +1,7 @@
+{
+  "result": "error",
+  "data": {
+    "error": "Missing parameters: ['query']",
+    "errorCode": 103
+  }
+}

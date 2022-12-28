@@ -1,0 +1,690 @@
+openapi: 3.0.3
+info:
+  title: Vulners API
+  version: 3.0.0
+tags:
+  - name: "v3"
+paths:
+  /api/v3/search/lucene/:
+    post:
+      summary: Search vulnerabilities database
+      operationId: Search
+      tags:
+        - v3
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SearchRequestSchema"
+      responses:
+        200:
+          description: Search results
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SearchResponseSchema"
+        400:
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorSchema"
+        401:
+          description: Authorization failed
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorSchema"
+        402:
+          description: API Key required
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorSchema"
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorSchema"
+  /api/v3/search/software/:
+    post:
+      summary: Search for particular software vulnerabilities
+      operationId: SearchSoftware
+      tags:
+        - v3
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SearchSoftwareRequestSchema"
+      responses:
+        200:
+          description: Search results
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SearchResponseSchema"
+        400:
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorSchema"
+        401:
+          description: Authorization failed
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorSchema"
+        402:
+          description: API Key required
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorSchema"
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorSchema"
+  /api/v3/search/id/:
+    post:
+      summary: Search by vulnerability ID
+      operationId: SearchByID
+      tags:
+        - v3
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SearchByIDRequestSchema"
+      responses:
+        200:
+          description: Search results
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SearchByIDResponseSchema"
+        400:
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorSchema"
+        401:
+          description: Authorization failed
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorSchema"
+        402:
+          description: API Key required
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorSchema"
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorSchema"
+
+components:
+  schemas:
+    ResultSchema:
+      type: string
+      enum:
+        - error
+        - OK
+    ErrorDataSchema:
+      type: object
+      properties:
+        error:
+          type: string
+        errorCode:
+          type: integer
+      required:
+        - error
+        - errorCode
+    ErrorSchema:
+      type: object
+      properties:
+        result:
+          $ref: "#/components/schemas/ResultSchema"
+        data:
+          $ref: "#/components/schemas/ErrorDataSchema"
+      required:
+        - result
+        - data
+    FieldsSchema:
+      type: string
+      enum:
+        - id
+        - title
+        - description
+        - type
+        - bulletinFamily
+        - cvss
+        - published
+        - modified
+        - lastseen
+        - href
+        - sourceHref
+        - sourceData
+        - cvelist
+    SearchRequestSchema:
+      type: object
+      properties:
+        apiKey:
+          type: string
+        query:
+          type: string
+        skip:
+          type: integer
+          minimum: 0
+          maximum: 9999
+        size:
+          type: integer
+          minimum: 0
+          maximum: 100
+        fields:
+          type: array
+          items:
+            $ref: "#/components/schemas/FieldsSchema"
+      required:
+        - apiKey
+        - query
+    SearchSoftwareRequestSchema:
+      type: object
+      properties:
+        apiKey:
+          type: string
+        software:
+          type: string
+        version:
+          type: string
+        type:
+          type: string
+          enum:
+            - software
+            - cpe
+        maxVulnerabilities:
+          type: integer
+          format: int32
+        exactmatch:
+          type: boolean
+      required:
+        - apiKey
+        - software
+        - version
+        - type
+        - exactmatch
+        - maxVulnerabilities
+    SearchSoftwareResponseSchema:
+      type: object
+      properties:
+        result:
+          $ref: "#/components/schemas/ResultSchema"
+        data:
+          oneOf:
+            - $ref: "#/components/schemas/ErrorDataSchema"
+            - $ref: "#/components/schemas/SearchSoftwareDataSchema"
+      required:
+        - result
+        - data
+    SearchSoftwareDataSchema:
+      type: object
+      properties:
+        search: 
+          type: array
+          items:
+            $ref: "#/components/schemas/SearchResultSourceSchema"
+        total:
+          type: integer
+          format: int32
+    SearchByIDRequestSchema:
+      type: object
+      properties:
+        apiKey:
+          type: string
+        id:
+          oneOf:
+            - type: string
+            - type: array
+              items:
+                type:
+                  string
+        references:
+          type: boolean
+      required:
+        - apiKey
+        - id
+    SearchByIDResponseSchema:
+      type: object
+      properties:
+        result:
+          $ref: "#/components/schemas/ResultSchema"
+        data:
+          oneOf:
+            - $ref: "#/components/schemas/ErrorDataSchema"
+            - $ref: "#/components/schemas/SearchByIDResponseDataSchema"
+      required:
+        - result
+        - data
+    SearchByIDResponseDocumentsSchema:
+      type: object
+      additionalProperties:
+        $ref: "#/components/schemas/SearchDocumentSchema"
+    SearchByIDResponseReferencesSchema:
+      type: object
+      additionalProperties:
+        $ref: "#/components/schemas/SearchReferenceSchema"
+    SearchByIDResponseDataSchema:
+      type: object
+      properties:
+        documents:
+          $ref: "#/components/schemas/SearchByIDResponseDocumentsSchema"
+        references:
+          $ref: "#/components/schemas/SearchByIDResponseReferencesSchema"
+    SearchReferenceSourceSchema:
+      type: object
+      properties:
+        description:
+          type: string
+        bulletinFamily:
+          type: string
+        cvelist:
+          type: array
+          items:
+            type: string
+        cvss:
+          $ref: "#/components/schemas/CVSSSchema"
+        cvss2:
+          $ref: "#/components/schemas/CVSS2Schema"
+        cvss3:
+          $ref: "#/components/schemas/CVSS3Schema"
+        exploitabilityScore:
+          type: number
+          format: double
+        impactScore:
+          type: number
+          format: double
+        href:
+          type: string
+        id:
+          type: string
+        lastseen:
+          type: string
+        modified:
+          type: string
+        published:
+          type: string
+        title:
+          type: string
+        type:
+          type: string
+        cpe:
+          type: array
+          items:
+            type: string
+        cpe23:
+          type: array
+          items:
+            type: string
+        cwe:
+          type: array
+          items:
+            type: string
+        edition:
+          type: number
+    SearchReferenceSchema:
+      type: object
+      properties:
+        ubuntucve:
+          type: array
+          items:
+            $ref: "#/components/schemas/SearchReferenceSourceSchema"
+        osv:
+          type: array
+          items:
+            $ref: "#/components/schemas/SearchReferenceSourceSchema"
+        veracode:
+          type: array
+          items:
+            $ref: "#/components/schemas/SearchReferenceSourceSchema"
+        github:
+          type: array
+          items:
+            $ref: "#/components/schemas/SearchReferenceSourceSchema"
+        cve:
+          type: array
+          items:
+            $ref: "#/components/schemas/SearchReferenceSourceSchema"
+    SearchDocumentSchema:
+      type: object
+      properties:
+        _internal:
+          type: object
+          properties:
+            score_hash:
+              type: string
+        _state:
+          type: object
+          properties:
+            affected_software_major_version:
+              type: number
+              format: double
+            dependencies:
+              type: number
+              format: double
+            score:
+              type: number
+              format: double
+        affectedSoftware:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              operator:
+                type: string
+              version:
+                type: string
+        id:
+          type: string
+        vendorId:
+          type: string
+          nullable: true
+        type:
+          type: string
+        bulletinFamily:
+          type: string
+        title:
+          type: string
+        description:
+          type: string
+        published:
+          type: string
+        cvss:
+          $ref: "#/components/schemas/CVSSSchema"
+        cvss2:
+          $ref: "#/components/schemas/CVSS2Schema"
+        cvss3:
+          $ref: "#/components/schemas/CVSS3Schema"
+        href:
+          type: string
+        reporter:
+          type: string
+        references:
+          type: array
+          items:
+            type: string
+        cvelist:
+          type: array
+          items:
+            type: string
+        immutableFields:
+          type: array
+          items:
+            type: string
+        lastseen:
+          type: string
+        modified:
+          type: string
+        viewCount:
+          type: integer
+        enchantments:
+          type: object
+          properties:
+            score:
+              type: object
+              properties:
+                value:
+                  type: number
+                  format: double
+                vector:
+                  type: string
+            vulnersScore:
+              type: number
+              format: double
+            affected_software:
+              type: object
+              properties:
+                major_version:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      name:
+                        type: string
+                      version:
+                        type: integer
+            dependencies:
+              type: object
+              properties:
+                references:
+                  type: array
+                  items: 
+                    type: object
+                    properties:
+                      idList:
+                        type: array
+                        items:
+                          type: string
+                      type:
+                        type: string
+      required:
+        - modified
+        - vendorId
+        - enchantments
+    SearchResponseSchema:
+      type: object
+      properties:
+        result:
+          $ref: "#/components/schemas/ResultSchema"
+        data:
+          oneOf:
+            - $ref: "#/components/schemas/ErrorDataSchema"
+            - $ref: "#/components/schemas/SearchResponseDataSchema"
+      required:
+        - result
+        - data
+    SearchResponseDataSchema:
+      type: object
+      properties:
+        search:
+          type: array
+          items:
+            $ref: "#/components/schemas/SearchResultSchema"
+        exactMatch:
+          type: boolean
+        references:
+          type: array
+          items:
+            type: string
+        total:
+          type: integer
+        maxSearchSize:
+          type: integer
+      required:
+        - search
+        - exactMatch
+        - references
+        - total
+        - maxSearchSize
+    SearchResultSchema:
+      type: object
+      properties:
+        _index:
+          type: string
+        _type:
+          type: string
+        _id:
+          type: string
+        _ignored:
+          type: array
+          items:
+            type: string
+        _score:
+          type: number
+          format: double
+        _source:
+          $ref: "#/components/schemas/SearchResultSourceSchema"
+        highlight:
+          type: object
+          properties:
+            sourceData:
+              type: array
+              items:
+                type: string
+            description:
+              type: array
+              items:
+                type: string
+            title:
+              type: array
+              items:
+                type: string
+            id:
+              type: array
+              items:
+                type: string
+            href:
+              type: array
+              items:
+                type: string
+        sort:
+          type: array
+          items:
+            type: number
+        flatDescription:
+          type: string
+      required:
+        - _index
+        - _type
+        - _id
+        - _score
+        - source
+        - highlight
+        - sorce
+        - flatDescription
+    SearchResultSourceSchema:
+      type: object
+      properties:
+        lastseen:
+          type: string
+        description:
+          type: string
+        cvss3:
+          $ref: "#/components/schemas/CVSS3Schema"
+        published:
+          type: string
+        type:
+          type: string
+        title:
+          type: string
+        bulletinFamily:
+          type: string
+        cvss2:
+          $ref: "#/components/schemas/CVSS2Schema"
+        cvelist:
+          type: array
+          items:
+            type: string
+        modified:
+          type: string
+        cpe:
+          type: array
+          items:
+            type: string
+        id:
+          type: string
+        href:
+          type: string
+        cvss:
+          $ref: "#/components/schemas/CVSSSchema"
+        vhref:
+          type: string
+        sourceData:
+          type: string
+        sourceHref:
+          type: string
+        privateArea:
+          type: integer
+    CVSSV3Schema:
+      type: object
+      properties:
+        baseSeverity:
+          type: string
+        confidentialityImpact:
+          type: string
+        attackComplexity:
+          type: string
+        scope:
+          type: string
+        attackVector:
+          type: string
+        availabilityImpact:
+          type: string
+        integrityImpact:
+          type: string
+        privilegesRequired:
+          type: string
+        baseScore:
+          type: number
+          format: double
+        vectorString:
+          type: string
+        version:
+          type: string
+        userInteraction:
+          type: string
+      required:
+        - baseSeverity
+        - confidentialityImpact
+        - attackComplexity
+        - scope
+        - attackVector
+        - availabilityImpact
+        - integrityImpact
+        - privilegesRequired
+        - baseScore
+        - vectorString
+        - version
+        - userInteraction
+    CVSS3Schema:
+      type: object
+      properties:
+        exploitabilityScore:
+          type: number
+          format: double
+        cvssV3:
+          $ref: "#/components/schemas/CVSSV3Schema"
+        impactScore:
+          type: number
+          format: double
+      required:
+        - exploitabilityScore
+        - cvssV3
+        - impactScore
+    CVSS2Schema:
+      type: object
+      properties:
+    CVSSSchema:
+      type: object
+      properties:
+        score:
+          type: number
+          format: double
+        vector:
+          type: string
+      required:
+        - score
+        - vector

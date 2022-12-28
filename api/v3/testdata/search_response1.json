@@ -1,0 +1,997 @@
+{
+  "result": "OK",
+  "data": {
+    "search": [
+      {
+        "_index": "es6_bulletins_bulletin_v3",
+        "_type": "_doc",
+        "_id": "OSV:GHSA-9JMQ-RX5F-8JWQ",
+        "_score": 4.180635,
+        "_source": {
+          "lastseen": "2022-12-14T05:15:42",
+          "description": "description here",
+          "cvss3": {
+            "exploitabilityScore": 2.3,
+            "cvssV3": {
+              "baseSeverity": "MEDIUM",
+              "confidentialityImpact": "LOW",
+              "attackComplexity": "LOW",
+              "scope": "CHANGED",
+              "attackVector": "NETWORK",
+              "availabilityImpact": "NONE",
+              "integrityImpact": "LOW",
+              "privilegesRequired": "LOW",
+              "baseScore": 5.4,
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+              "version": "3.1",
+              "userInteraction": "REQUIRED"
+            },
+            "impactScore": 2.7
+          },
+          "published": "2022-08-10T17:51:53",
+          "type": "osv",
+          "title": "nbconvert vulnerable to cross-site scripting (XSS) via multiple exploit paths",
+          "bulletinFamily": "software",
+          "cvss2": {},
+          "cvelist": [
+            "CVE-2021-32862"
+          ],
+          "modified": "2022-12-14T05:15:39",
+          "id": "OSV:GHSA-9JMQ-RX5F-8JWQ",
+          "href": "https://osv.dev/vulnerability/GHSA-9jmq-rx5f-8jwq",
+          "cvss": {
+            "score": 0.0,
+            "vector": "NONE"
+          },
+          "vhref": "https://vulners.com/osv/OSV:GHSA-9JMQ-RX5F-8JWQ"
+        },
+        "highlight": {
+          "description": [
+            "png') -%}\nheight={{ height }}\n```\n\nThe following `output.metadata.width` node will execute arbitrary javascript:\n\n```json\n    {\n     \"output_type\": \"execute_result\",\n     \"data\": {\n      \"image/png\": [\"<span class=\"vulners-highlight\">abcd</span>"
+          ]
+        },
+        "sort": [
+          4.180635,
+          1660153913000
+        ],
+        "flatDescription": "Cross-linking to https://github.com/jupyter/nbviewer/security/advisories/GHSA-h274-fcvj-h2wm Most of the fixes will be in this repo, though, so having it here gives us the private fork to work on patches Below is currently a duplicate of the original report:  Received on security@ipython.org..."
+      },
+      {
+        "_index": "es6_bulletins_bulletin_v3",
+        "_type": "_doc",
+        "_id": "SAMBA_DETECT.NASL",
+        "_score": 2.2265563,
+        "_source": {
+          "lastseen": "2022-10-13T16:12:23",
+          "description": "The remote host is running Samba, a CIFS/SMB server for Linux and Unix.",
+          "cvss3": {},
+          "published": "2007-05-16T00:00:00",
+          "type": "nessus",
+          "title": "Samba Server Detection",
+          "bulletinFamily": "scanner",
+          "cvss2": {},
+          "cvelist": [],
+          "modified": "2022-10-12T00:00:00",
+          "cpe": [
+            "cpe:/a:samba:samba"
+          ],
+          "id": "SAMBA_DETECT.NASL",
+          "href": "https://www.tenable.com/plugins/nessus/25240",
+          "sourceData": "#\n# (C) Tenable Network Security, Inc.",
+          "cvss": {
+            "score": 0.0,
+            "vector": "NONE"
+          },
+          "vhref": "https://vulners.com/nessus/SAMBA_DETECT.NASL"
+        },
+        "highlight": {
+          "sourceData": [
+            "\"smb_func.inc\");\ninclude(\"global_settings.inc\");\ninclude(\"install_func.inc\");\n\nfunction _RpcSpoolerInit ()\n{\n local_var fid, data, type, error;\n\n fid = bind_pipe (pipe:\"\\spoolss\", uuid:\"12345678-1234-<span class=\"vulners-highlight\">abcd</span>-ef00",
+            "24);\n if (error == 0x1c010002) # nca_op_rng_error\n   return TRUE;\n\n return FALSE;\n}\n\n\nfunction _LsaDelete ()\n{\n local_var fid, data, type, error;\n\n fid = bind_pipe (pipe:\"\\lsarpc\", uuid:\"12345778-1234-<span class=\"vulners-highlight\">abcd</span>-ef00"
+          ]
+        },
+        "sort": [
+          2.2265563,
+          1179273600000
+        ],
+        "flatDescription": "The remote host is running Samba, a CIFS/SMB server for Linux and Unix. # (C) Tenable Network Security, Inc.  include(&quot;compat.inc&quot;); if (description) {  script_id(25240);  script_version(&quot;1.15&quot;);  script_set_attribute(attribute:&quot;plugin_modification_date&quot;, value:&quot;2022/10/12&quot;);..."
+      },
+      {
+        "_index": "es6_bulletins_bulletin_v3",
+        "_type": "_doc",
+        "_id": "SMB_NULL_SESSION.NASL",
+        "_score": 1.9782139,
+        "_ignored": [
+          "history.bulletin.solution.keyword"
+        ],
+        "_source": {
+          "lastseen": "2022-10-09T15:33:04",
+          "description": "The remote host is running and SMB protocol. It is possible to log into the browser or spoolss pipes using a NULL session (i.e., with no login or password).\n\nDepending on the configuration, it may be possible for an unauthenticated, remote attacker to leverage this issue to get information about the remote host.",
+          "cvss3": {
+            "score": 7.3,
+            "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L"
+          },
+          "published": "2007-10-04T00:00:00",
+          "type": "nessus",
+          "title": "SMB NULL Session Authentication",
+          "bulletinFamily": "scanner",
+          "cvss2": {},
+          "cvelist": [
+            "CVE-1999-0519",
+            "CVE-1999-0520",
+            "CVE-2002-1117"
+          ],
+          "modified": "2022-10-07T00:00:00",
+          "cpe": [
+            "cpe:/o:microsoft:windows",
+            "cpe:/a:samba:samba"
+          ],
+          "id": "SMB_NULL_SESSION.NASL",
+          "href": "https://www.tenable.com/plugins/nessus/26920",
+          "sourceData": "#\n# (C) Tenable Network Security, Inc.",
+          "cvss": {
+            "score": 7.5,
+            "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+          },
+          "vhref": "https://vulners.com/nessus/SMB_NULL_SESSION.NASL"
+        },
+        "highlight": {
+          "sourceData": [
+            "NULL credentials');\n}\n\n# make the list of pipes to cycle through\nvar pipe_uuids = make_array();\npipe_uuids['browser']  = '6bffd098-a112-3610-9833-012892020162';\npipe_uuids['spoolss']  = '12345678-1234-<span class=\"vulners-highlight\">ABCD</span>-EF00",
+            "-0123456789AB';\npipe_uuids['netlogon'] = '12345678-1234-<span class=\"vulners-highlight\">ABCD</span>-EF00-01234567CFFB';\npipe_uuids['lsarpc']   = 'c681d488-d850-11d0-8c52-00c04fd90f7e';\npipe_uuids['samr']     = '12345778-1234-<span class=\"vulners-highlight\">ABCD</span>-EF00-0123456789AC"
+          ]
+        },
+        "sort": [
+          1.9782139,
+          1191456000000
+        ],
+        "flatDescription": "The remote host is running and SMB protocol. It is possible to log into the browser or spoolss pipes using a NULL session (i.e., with no login or password). Depending on the configuration, it may be possible for an unauthenticated, remote attacker to leverage this issue to get information about..."
+      },
+      {
+        "_index": "es6_bulletins_bulletin_v3",
+        "_type": "_doc",
+        "_id": "EULEROS_SA-2019-2438.NASL",
+        "_score": 1.8262697,
+        "_source": {
+          "lastseen": "2022-12-18T16:14:56",
+          "description": "According to the versions of the php packages installed",
+          "cvss3": {
+            "score": 9.8,
+            "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+          },
+          "published": "2019-12-04T00:00:00",
+          "type": "nessus",
+          "title": "EulerOS 2.0 SP2 : php (EulerOS-SA-2019-2438)",
+          "bulletinFamily": "scanner",
+          "cvss2": {},
+          "cvelist": [
+            "CVE-2011-4718",
+            "CVE-2014-9767",
+            "CVE-2014-9912",
+            "CVE-2015-5589",
+            "CVE-2015-6831",
+            "CVE-2015-6832",
+            "CVE-2015-6833",
+            "CVE-2015-7803",
+            "CVE-2015-7804",
+            "CVE-2015-8382",
+            "CVE-2015-8835",
+            "CVE-2015-8867",
+            "CVE-2015-8874",
+            "CVE-2015-8879",
+            "CVE-2015-8935",
+            "CVE-2016-10397",
+            "CVE-2016-2554",
+            "CVE-2016-3141",
+            "CVE-2016-3142",
+            "CVE-2016-3185",
+            "CVE-2016-4070",
+            "CVE-2016-4539",
+            "CVE-2016-4540",
+            "CVE-2016-4541",
+            "CVE-2016-4542",
+            "CVE-2016-4543",
+            "CVE-2016-5093",
+            "CVE-2016-5094",
+            "CVE-2016-6288",
+            "CVE-2016-6291",
+            "CVE-2016-6292",
+            "CVE-2016-6293",
+            "CVE-2016-6294",
+            "CVE-2016-7124",
+            "CVE-2016-7125",
+            "CVE-2016-7128",
+            "CVE-2016-7411",
+            "CVE-2016-7412",
+            "CVE-2016-7414",
+            "CVE-2016-7418",
+            "CVE-2016-7480",
+            "CVE-2016-9934",
+            "CVE-2016-9935",
+            "CVE-2017-11143",
+            "CVE-2017-11144",
+            "CVE-2017-11145",
+            "CVE-2017-11147",
+            "CVE-2017-11628",
+            "CVE-2017-12933",
+            "CVE-2017-16642",
+            "CVE-2017-7272",
+            "CVE-2017-9224",
+            "CVE-2017-9226",
+            "CVE-2017-9227",
+            "CVE-2017-9228",
+            "CVE-2017-9229",
+            "CVE-2018-10545",
+            "CVE-2018-10547",
+            "CVE-2018-14851",
+            "CVE-2018-17082",
+            "CVE-2018-5712",
+            "CVE-2019-11040",
+            "CVE-2019-11041",
+            "CVE-2019-11042",
+            "CVE-2019-11043"
+          ],
+          "modified": "2022-12-05T00:00:00",
+          "cpe": [
+            "p-cpe:/a:huawei:euleros:php",
+            "p-cpe:/a:huawei:euleros:php-cli",
+            "p-cpe:/a:huawei:euleros:php-common",
+            "p-cpe:/a:huawei:euleros:php-gd",
+            "p-cpe:/a:huawei:euleros:php-ldap",
+            "p-cpe:/a:huawei:euleros:php-mysql",
+            "p-cpe:/a:huawei:euleros:php-odbc",
+            "p-cpe:/a:huawei:euleros:php-pdo",
+            "p-cpe:/a:huawei:euleros:php-pgsql",
+            "p-cpe:/a:huawei:euleros:php-process",
+            "p-cpe:/a:huawei:euleros:php-recode",
+            "p-cpe:/a:huawei:euleros:php-soap",
+            "p-cpe:/a:huawei:euleros:php-xml",
+            "p-cpe:/a:huawei:euleros:php-xmlrpc",
+            "cpe:/o:huawei:euleros:2.0"
+          ],
+          "id": "EULEROS_SA-2019-2438.NASL",
+          "href": "https://www.tenable.com/plugins/nessus/131592",
+          "sourceData": "#%NASL_MIN_LEVEL 70300\n#\n# (C) Tenable Network Security, Inc.\n",
+          "cvss": {
+            "score": 10,
+            "vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
+          },
+          "vhref": "https://vulners.com/nessus/EULEROS_SA-2019-2438.NASL"
+        },
+        "highlight": {
+          "description": [
+            ":((<span class=\"vulners-highlight\">abcd</span>))|(((?:(?:(?:(?:abc|(?"
+          ],
+          "sourceData": [
+            ":((<span class=\"vulners-highlight\">abcd</span>))|(((?:(?:(?:(?:abc|(?"
+          ]
+        },
+        "sort": [
+          1.8262697,
+          1575417600000
+        ],
+        "flatDescription": "According to the versions of the php packages installed, the EulerOS installation on the remote host is affected by the following vulnerabilities :   In PHP versions 7.1.x below 7.1.33, 7.2.x below 7.2.24     and 7.3.x below 7.3.11 in certain configurations of FPM     setup it is possible to cause..."
+      },
+      {
+        "_index": "es6_bulletins_bulletin_v3",
+        "_type": "_doc",
+        "_id": "SMB_KB896423.NASL",
+        "_score": 1.2166852,
+        "_source": {
+          "lastseen": "2022-10-06T15:12:13",
+          "description": "The remote host contains a version of the Print Spooler service that may allow an attacker to execute code on the remote host or crash the spooler service.\n\nAn attacker can execute code on the remote host with a NULL session against :\n\n  - Windows 2000\n\nAn attacker can crash the remote service with a NULL session against :\n\n  - Windows 2000\n  - Windows XP SP1\n\nAn attacker needs valid credentials to crash the service against :\n\n  - Windows 2003\n  - Windows XP SP2",
+          "cvss3": {
+            "score": 7.3,
+            "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L"
+          },
+          "published": "2005-08-09T00:00:00",
+          "type": "nessus",
+          "title": "MS05-043: Vulnerability in Printer Spooler Service Could Allow Remote Code Execution (896423) (uncredentialed check)",
+          "bulletinFamily": "scanner",
+          "cvss2": {},
+          "cvelist": [
+            "CVE-2005-1984"
+          ],
+          "modified": "2022-10-05T00:00:00",
+          "cpe": [
+            "cpe:/o:microsoft:windows"
+          ],
+          "id": "SMB_KB896423.NASL",
+          "href": "https://www.tenable.com/plugins/nessus/19407",
+          "sourceData": "#\n# (C) Tenable Network Security, Inc.\n#\n\ninclude(\"compat.inc\");",
+          "cvss": {
+            "score": 7.5,
+            "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+          },
+          "vhref": "https://vulners.com/nessus/SMB_KB896423.NASL"
+        },
+        "highlight": {
+          "sourceData": [
+            "smb\");\n script_require_ports(139,445);\n exit(0);\n}\n\n#\n\ninclude ('smb_func.inc');\n\nfunction ReplyOpenPrinter ()\n{\n local_var fid, data, rep, name;\n\n fid = bind_pipe (pipe:\"\\spoolss\", uuid:\"12345678-1234-<span class=\"vulners-highlight\">abcd</span>-ef00"
+          ]
+        },
+        "sort": [
+          1.2166852,
+          1123545600000
+        ],
+        "flatDescription": "The remote host contains a version of the Print Spooler service that may allow an attacker to execute code on the remote host or crash the spooler service. An attacker can execute code on the remote host with a NULL session against :  Windows 2000  An attacker can crash the remote service with a..."
+      },
+      {
+        "_index": "es6_bulletins_bulletin_v3",
+        "_type": "_doc",
+        "_id": "B45AC489-7424-4AFA-9628-222E28152812",
+        "_score": 0.77675915,
+        "_source": {
+          "lastseen": "2022-09-18T00:46:05",
+          "description": "# Description\n\nThere is a significant timing difference in the login functionality for valid and invalid usernames.\n\n",
+          "cvss3": {},
+          "published": "2022-09-11T12:43:26",
+          "type": "huntr",
+          "title": "User Enumeration via Response Timing",
+          "bulletinFamily": "bugbounty",
+          "cvss2": {},
+          "cvelist": [],
+          "modified": "2022-09-18T00:27:27",
+          "id": "B45AC489-7424-4AFA-9628-222E28152812",
+          "href": "https://www.huntr.dev/bounties/b45ac489-7424-4afa-9628-222e28152812/",
+          "cvss": {
+            "score": 0.0,
+            "vector": "NONE"
+          },
+          "vhref": "https://vulners.com/huntr/B45AC489-7424-4AFA-9628-222E28152812"
+        },
+        "highlight": {
+          "description": [
+            "alternatively we can see the response time in Burp Repeater)\n```\nimport requests\n\nurl = \"http://127.0.0.1:8000/graphql\"\n\nvalid_user = [{\"operationName\":None,\"variables\":{\"username\":\"admin@test.com\",\"password\":\"<span class=\"vulners-highlight\">abcd</span>",
+            "continuationToken\\n      redirect\\n      tfaQRImage\\n      __typename\\n    }\\n    __typename\\n  }\\n}\\n\"}]\n\ninvalid_user = [{\"operationName\":None,\"variables\":{\"username\":\"doesnotexist@test.com\",\"password\":\"<span class=\"vulners-highlight\">abcd</span>"
+          ]
+        },
+        "sort": [
+          0.77675915,
+          1662900206000
+        ],
+        "flatDescription": "Description There is a significant timing difference in the login functionality for valid and invalid usernames. Proof of Concept Steps to reproduce: 1. Attempt a Login with a valid user and an invalid user and observe the difference in the response time Here is a small test script (alternatively..."
+      },
+      {
+        "_index": "es6_bulletins_bulletin_v3",
+        "_type": "_doc",
+        "_id": "TALOS-2022-1565",
+        "_score": 0.3782111,
+        "_source": {
+          "lastseen": "2022-10-26T21:55:01",
+          "description": "# Talos Vulnerability Report\n\n",
+          "cvss3": {
+            "exploitabilityScore": 2.8,
+            "cvssV3": {
+              "baseSeverity": "MEDIUM",
+              "confidentialityImpact": "NONE",
+              "attackComplexity": "LOW",
+              "scope": "UNCHANGED",
+              "attackVector": "NETWORK",
+              "availabilityImpact": "HIGH",
+              "integrityImpact": "NONE",
+              "privilegesRequired": "LOW",
+              "baseScore": 6.5,
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+              "version": "3.1",
+              "userInteraction": "NONE"
+            },
+            "impactScore": 3.6
+          },
+          "published": "2022-10-20T00:00:00",
+          "type": "talos",
+          "title": "Abode Systems, Inc. iota All-In-One Security Kit web interface /action/ipcamSetParamPost double-free vulnerability",
+          "bulletinFamily": "info",
+          "cvss2": {},
+          "cvelist": [
+            "CVE-2022-32574"
+          ],
+          "modified": "2022-10-20T00:00:00",
+          "id": "TALOS-2022-1565",
+          "href": "https://www.talosintelligence.com/vulnerability_reports/TALOS-2022-1565",
+          "cvss": {
+            "score": 0.0,
+            "vector": "NONE"
+          },
+          "vhref": "https://vulners.com/talos/TALOS-2022-1565"
+        },
+        "highlight": {
+          "description": [
+            "POST /action/ipcamSetParamPost HTTP/1.1\n    Authorization: Basic YWJvZGVzZXJ2aWNlMTU6MTIzNDU2Nzg5\n    Host: 10.1.1.201\n    Accept: application/json, text/javascript, */*; q=0.01\n    User-Agent: <span class=\"vulners-highlight\">abcd</span>"
+          ]
+        },
+        "sort": [
+          0.3782111,
+          1666224000000
+        ],
+        "flatDescription": "Talos Vulnerability Report TALOS-2022-1565 Abode Systems, Inc. iota All-In-One Security Kit web interface /action/ipcamSetParamPost double-free vulnerability October 20, 2022 CVE Number CVE-2022-32574 SUMMARY A double-free vulnerability exists in the web interface /action/ipcamSetParamPost..."
+      },
+      {
+        "_index": "es6_bulletins_bulletin_v3",
+        "_type": "_doc",
+        "_id": "GHSA-9JMQ-RX5F-8JWQ",
+        "_score": 0.058359824,
+        "_source": {
+          "lastseen": "2022-08-23T17:11:36",
+          "description": "Cross-linking to ",
+          "cvss3": {
+            "exploitabilityScore": 2.3,
+            "cvssV3": {
+              "baseSeverity": "MEDIUM",
+              "confidentialityImpact": "LOW",
+              "attackComplexity": "LOW",
+              "scope": "CHANGED",
+              "attackVector": "NETWORK",
+              "availabilityImpact": "NONE",
+              "integrityImpact": "LOW",
+              "privilegesRequired": "LOW",
+              "baseScore": 5.4,
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+              "version": "3.1",
+              "userInteraction": "REQUIRED"
+            },
+            "impactScore": 2.7
+          },
+          "published": "2022-08-10T17:51:53",
+          "type": "github",
+          "title": "nbconvert vulnerable to cross-site scripting (XSS) via multiple exploit paths",
+          "bulletinFamily": "software",
+          "cvss2": {},
+          "cvelist": [
+            "CVE-2021-32862"
+          ],
+          "modified": "2022-08-23T16:59:20",
+          "id": "GHSA-9JMQ-RX5F-8JWQ",
+          "href": "https://github.com/advisories/GHSA-9jmq-rx5f-8jwq",
+          "cvss": {
+            "score": 0.0,
+            "vector": "NONE"
+          },
+          "vhref": "https://vulners.com/github/GHSA-9JMQ-RX5F-8JWQ"
+        },
+        "highlight": {
+          "description": [
+            "png') -%}\nheight={{ height }}\n```\n\nThe following `output.metadata.width` node will execute arbitrary javascript:\n\n```json\n    {\n     \"output_type\": \"execute_result\",\n     \"data\": {\n      \"image/png\": [\"<span class=\"vulners-highlight\">abcd</span>"
+          ]
+        },
+        "sort": [
+          0.058359824,
+          1660153913000
+        ],
+        "flatDescription": "Cross-linking to https://github.com/jupyter/nbviewer/security/advisories/GHSA-h274-fcvj-h2wm Most of the fixes will be in this repo, though, so having it here gives us the private fork to work on patches Below is currently a duplicate of the original report:  Received on security@ipython.org..."
+      },
+      {
+        "_index": "es6_bulletins_bulletin_v3",
+        "_type": "_doc",
+        "_id": "KITPLOIT:5359695953335159681",
+        "_score": 0.034341488,
+        "_source": {
+          "lastseen": "2022-09-19T12:06:40",
+          "description": "[![]",
+          "cvss3": {},
+          "published": "2022-09-19T11:30:00",
+          "type": "kitploit",
+          "title": "CATS - REST API Fuzzer And Negative Testing Tool For OpenAPI Endpoints",
+          "bulletinFamily": "tools",
+          "cvss2": {},
+          "cvelist": [],
+          "modified": "2022-09-19T11:30:00",
+          "id": "KITPLOIT:5359695953335159681",
+          "href": "http://www.kitploit.com/2022/09/cats-rest-api-fuzzer-and-negative.html",
+          "cvss": {
+            "score": 0.0,
+            "vector": "NONE"
+          },
+          "vhref": "https://vulners.com/kitploit/KITPLOIT:5359695953335159681"
+        },
+        "highlight": {
+          "description": [
+            "StringFormatTotallyWrongValuesFuzzer` \\- iterate through each String field and get its 'format' value (i.e. email, ip, uuid, date, datetime, etc); send requests with values which are totally wrong (i.e. <span class=\"vulners-highlight\">abcd</span>"
+          ]
+        },
+        "sort": [
+          0.034341488,
+          1663587000000
+        ],
+        "flatDescription": "REST API fuzzer and negative testing tool. Run thousands of self-healing API tests within minutes with no coding effort!  Comprehensive: tests are generated automatically based on a large number scenarios and cover every field and header Intelligent: tests are generated based on data types and..."
+      },
+      {
+        "_index": "es6_bulletins_bulletin_v3",
+        "_type": "_doc",
+        "_id": "OBB:2441306",
+        "_score": 0.0017828799,
+        "_source": {
+          "lastseen": "2022-03-22T14:15:21",
+          "description": "Following",
+          "cvss3": {},
+          "published": "2022-03-22T09:56:00",
+          "type": "openbugbounty",
+          "title": "abcd-report.ucsd.edu Cross Site Scripting vulnerability OBB-2441306 ",
+          "bulletinFamily": "bugbounty",
+          "cvss2": {},
+          "cvelist": [],
+          "modified": "2022-06-20T09:56:00",
+          "id": "OBB:2441306",
+          "href": "https://www.openbugbounty.org/reports/2441306/",
+          "cvss": {
+            "score": 0.0,
+            "vector": "NONE"
+          },
+          "vhref": "https://vulners.com/openbugbounty/OBB:2441306"
+        },
+        "highlight": {
+          "description": [
+            "Affected Website:| **[<span class=\"vulners-highlight\">abcd</span>-report.ucsd.edu](<https://<span class=\"vulners-highlight\">abcd</span>-report.ucsd.edu>) **  \n---|---  \nOpen Bug Bounty Program:| **Create your bounty program now**. It's open and free."
+          ],
+          "title": [
+            "<span class=\"vulners-highlight\">abcd</span>-report.ucsd.edu Cross Site Scripting vulnerability OBB-2441306"
+          ]
+        },
+        "sort": [
+          0.0017828799,
+          1647942960000
+        ],
+        "flatDescription": "Following the coordinated and responsible vulnerability disclosure guidelines of the ISO 29147 standard, Open Bug Bounty has:  a. verified the vulnerability and confirmed its existence; b. notified the website operator about its existence. Technical details of the vulnerability are currently..."
+      },
+      {
+        "_index": "es6_bulletins_bulletin_v3",
+        "_type": "_doc",
+        "_id": "OBB:2428850",
+        "_score": 0.000683031,
+        "_source": {
+          "lastseen": "2022-03-13T17:08:14",
+          "description": "Following",
+          "cvss3": {},
+          "published": "2022-03-13T11:19:00",
+          "type": "openbugbounty",
+          "title": "abcd-report.ucsd.edu Cross Site Scripting vulnerability OBB-2428850 ",
+          "bulletinFamily": "bugbounty",
+          "cvss2": {},
+          "cvelist": [],
+          "modified": "2022-06-11T11:19:00",
+          "id": "OBB:2428850",
+          "href": "https://www.openbugbounty.org/reports/2428850/",
+          "cvss": {
+            "score": 0.0,
+            "vector": "NONE"
+          },
+          "vhref": "https://vulners.com/openbugbounty/OBB:2428850"
+        },
+        "highlight": {
+          "description": [
+            "Affected Website:| **[<span class=\"vulners-highlight\">abcd</span>-report.ucsd.edu](<https://<span class=\"vulners-highlight\">abcd</span>-report.ucsd.edu>) **  \n---|---  \nOpen Bug Bounty Program:| **Create your bounty program now**. It's open and free."
+          ],
+          "title": [
+            "<span class=\"vulners-highlight\">abcd</span>-report.ucsd.edu Cross Site Scripting vulnerability OBB-2428850"
+          ]
+        },
+        "sort": [
+          0.000683031,
+          1647170340000
+        ],
+        "flatDescription": "Following the coordinated and responsible vulnerability disclosure guidelines of the ISO 29147 standard, Open Bug Bounty has:  a. verified the vulnerability and confirmed its existence; b. notified the website operator about its existence. Technical details of the vulnerability are currently..."
+      },
+      {
+        "_index": "es6_bulletins_bulletin_v3",
+        "_type": "_doc",
+        "_id": "SPREE_SEARCH_CMD_EXEC.NASL",
+        "_score": 5.473492e-08,
+        "_source": {
+          "lastseen": "2022-04-12T16:25:56",
+          "description": "The remote web server hosts Spree, an open source e-commerce application for Ruby on Rails.\n\nThe version of this application installed on the remote host has a flaw in the third-party 'rd_searchlogic' Ruby gem. An unauthenticated, remote attacker can inject arbitrary Ruby code via the 'search[instance_eval]' parameter of the 'api/orders.json' script to be executed on the remote host subject to the privileges under which the web server operates.",
+          "cvss3": {
+            "score": 8.8,
+            "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+          },
+          "published": "2011-05-03T00:00:00",
+          "type": "nessus",
+          "title": "Spreecommerce api/orders.json Search Function Arbitrary Command Execution",
+          "bulletinFamily": "scanner",
+          "cvss2": {},
+          "cvelist": [],
+          "modified": "2022-04-11T00:00:00",
+          "cpe": [],
+          "id": "SPREE_SEARCH_CMD_EXEC.NASL",
+          "href": "https://www.tenable.com/plugins/nessus/53633",
+          "sourceData": "#%NASL_MIN_LEVEL 70300\n#\n#",
+          "cvss": {
+            "score": 7.5,
+            "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+          },
+          "vhref": "https://vulners.com/nessus/SPREE_SEARCH_CMD_EXEC.NASL"
+        },
+        "highlight": {
+          "sourceData": [
+            "instance_eval]=' + urlencode(str:exploit);\n\n    res = http_send_recv3(\n      port         : port,\n      method       : \"GET\",\n      item         : url,\n      add_headers  : make_array(\"HTTP_AUTHORIZATION\", \"<span class=\"vulners-highlight\">ABCD</span>"
+          ]
+        },
+        "sort": [
+          5.473492e-08,
+          1304380800000
+        ],
+        "flatDescription": "The remote web server hosts Spree, an open source e-commerce application for Ruby on Rails. The version of this application installed on the remote host has a flaw in the third-party &#x27;rd_searchlogic&#x27; Ruby gem. An unauthenticated, remote attacker can inject arbitrary Ruby code via the..."
+      },
+      {
+        "_index": "es6_bulletins_bulletin_v3",
+        "_type": "_doc",
+        "_id": "F1B229EB-2178-53B9-839E-BA0B916376A2",
+        "_score": 5.4540555e-10,
+        "_source": {
+          "lastseen": "2022-03-16T17:02:43",
+          "description": "= Print Nightmare 分析报告\n:imagesdir: Figures\n:toc:\n:icons: font\n:f...",
+          "cvss3": {
+            "exploitabilityScore": 2.8,
+            "cvssV3": {
+              "baseSeverity": "HIGH",
+              "confidentialityImpact": "HIGH",
+              "attackComplexity": "LOW",
+              "scope": "UNCHANGED",
+              "attackVector": "NETWORK",
+              "availabilityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "baseScore": 8.8,
+              "privilegesRequired": "NONE",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "userInteraction": "REQUIRED",
+              "version": "3.1"
+            },
+            "impactScore": 5.9
+          },
+          "published": "2021-07-22T10:49:30",
+          "type": "githubexploit",
+          "title": "Exploit for Improper Privilege Management in Microsoft",
+          "bulletinFamily": "exploit",
+          "cvss2": {
+            "severity": "HIGH",
+            "exploitabilityScore": 8.6,
+            "obtainAllPrivilege": false,
+            "userInteractionRequired": true,
+            "obtainOtherPrivilege": false,
+            "cvssV2": {
+              "accessComplexity": "MEDIUM",
+              "confidentialityImpact": "COMPLETE",
+              "availabilityImpact": "COMPLETE",
+              "integrityImpact": "COMPLETE",
+              "baseScore": 9.3,
+              "vectorString": "AV:N/AC:M/Au:N/C:C/I:C/A:C",
+              "version": "2.0",
+              "accessVector": "NETWORK",
+              "authentication": "NONE"
+            },
+            "acInsufInfo": false,
+            "impactScore": 10.0,
+            "obtainUserPrivilege": false
+          },
+          "cvelist": [
+            "CVE-2021-34527",
+            "CVE-2021-1675"
+          ],
+          "modified": "2022-03-16T09:18:03",
+          "id": "F1B229EB-2178-53B9-839E-BA0B916376A2",
+          "href": "",
+          "cvss": {
+            "score": 9.3,
+            "vector": "AV:N/AC:M/Au:N/C:C/I:C/A:C"
+          },
+          "privateArea": 1,
+          "vhref": "https://vulners.com/githubexploit/F1B229EB-2178-53B9-839E-BA0B916376A2"
+        },
+        "highlight": {},
+        "sort": [
+          5.4540555e-10,
+          1626950970000
+        ],
+        "flatDescription": "= Print Nightmare 分析报告 :imagesdir: Figures :toc: :icons: font..."
+      },
+      {
+        "_index": "es6_bulletins_bulletin_v3",
+        "_type": "_doc",
+        "_id": "MSF:AUXILIARY-SCANNER-SMB-SMB_UNINIT_CRED-",
+        "_score": 2.6999354e-11,
+        "_source": {
+          "lastseen": "2022-11-14T15:03:40",
+          "description": "This module checks if a Samba target is vulnerable to an uninitialized variable creds vulnerability.\n",
+          "cvss3": {},
+          "published": "2015-03-05T05:50:14",
+          "type": "metasploit",
+          "title": "Samba _netr_ServerPasswordSet Uninitialized Credential State",
+          "bulletinFamily": "exploit",
+          "cvss2": {},
+          "cvelist": [
+            "CVE-2015-0240"
+          ],
+          "modified": "2022-02-16T23:22:40",
+          "id": "MSF:AUXILIARY-SCANNER-SMB-SMB_UNINIT_CRED-",
+          "href": "https://www.rapid7.com/db/modules/auxiliary/scanner/smb/smb_uninit_cred/",
+          "sourceData": "##\n# This module requires Metasploit",
+          "sourceHref": "https://github.com/rapid7/metasploit-framework/blob/master//modules/auxiliary/scanner/smb/smb_uninit_cred.rb",
+          "cvss": {
+            "score": 0.0,
+            "vector": "NONE"
+          },
+          "vhref": "https://vulners.com/metasploit/MSF:AUXILIARY-SCANNER-SMB-SMB_UNINIT_CRED-"
+        },
+        "highlight": {
+          "sourceData": [
+            "Auxiliary::Report\n\n  # Aliases for common classes\n  SIMPLE = Rex::Proto::SMB::SimpleClient\n  XCEPT  = Rex::Proto::SMB::Exceptions\n  CONST  = Rex::Proto::SMB::Constants\n\n  RPC_NETLOGON_UUID = '12345678-1234-<span class=\"vulners-highlight\">abcd</span>-ef00"
+          ]
+        },
+        "sort": [
+          2.6999354e-11,
+          1425534614000
+        ],
+        "flatDescription": "This module checks if a Samba target is vulnerable to an uninitialized variable creds vulnerability.  ## This module requires Metasploit: https://metasploit.com/download Current source: https://github.com/rapid7/metasploit-framework  class MetasploitModule &lt; Msf::Auxiliary # Exploit mixins should..."
+      },
+      {
+        "_index": "es6_bulletins_bulletin_v3",
+        "_type": "_doc",
+        "_id": "6A6ACA72-32B7-45B3-A8BA-9B400B2D669C",
+        "_score": 6.751111e-14,
+        "_source": {
+          "lastseen": "2022-03-30T11:08:03",
+          "description": "# Description\nA CSRF issue is found",
+          "cvss3": {
+            "exploitabilityScore": 2.8,
+            "cvssV3": {
+              "baseSeverity": "MEDIUM",
+              "confidentialityImpact": "NONE",
+              "attackComplexity": "LOW",
+              "scope": "UNCHANGED",
+              "attackVector": "NETWORK",
+              "availabilityImpact": "NONE",
+              "integrityImpact": "LOW",
+              "privilegesRequired": "NONE",
+              "baseScore": 4.3,
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N",
+              "version": "3.1",
+              "userInteraction": "REQUIRED"
+            },
+            "impactScore": 1.4
+          },
+          "published": "2022-01-14T12:07:45",
+          "type": "huntr",
+          "title": "Cross-Site Request Forgery (CSRF) in livehelperchat/livehelperchat",
+          "bulletinFamily": "bugbounty",
+          "cvss2": {
+            "severity": "MEDIUM",
+            "exploitabilityScore": 8.6,
+            "obtainAllPrivilege": false,
+            "userInteractionRequired": true,
+            "obtainOtherPrivilege": false,
+            "cvssV2": {
+              "accessComplexity": "MEDIUM",
+              "confidentialityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "integrityImpact": "PARTIAL",
+              "baseScore": 4.3,
+              "vectorString": "AV:N/AC:M/Au:N/C:N/I:P/A:N",
+              "version": "2.0",
+              "accessVector": "NETWORK",
+              "authentication": "NONE"
+            },
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainUserPrivilege": false
+          },
+          "cvelist": [
+            "CVE-2022-0245"
+          ],
+          "modified": "2022-01-17T05:13:52",
+          "id": "6A6ACA72-32B7-45B3-A8BA-9B400B2D669C",
+          "href": "https://www.huntr.dev/bounties/6a6aca72-32b7-45b3-a8ba-9b400b2d669c/",
+          "cvss": {
+            "score": 4.3,
+            "vector": "AV:N/AC:M/Au:N/C:N/I:P/A:N"
+          },
+          "vhref": "https://vulners.com/huntr/6A6ACA72-32B7-45B3-A8BA-9B400B2D669C"
+        },
+        "highlight": {
+          "description": [
+            "1\n\nTitle=<span class=\"vulners-highlight\">abcd</span>&Tags=<span class=\"vulners-highlight\">abcd</span>&ExplainHover=&Delay=0&Position=0&cannedDepartmentGroup=0&Message=&FallbackMessage=&HTMLSnippet=&MessageExtFB=&FallbackMessageExtFB=&repetitiveness=0&active_from=2022-01-13T11%3A41&",
+            "<body>\n  <script>history.pushState('', '', '/')</script>\n    <form action=\"https://demo.livehelperchat.com/site_admin/chat/newcannedmsg\" method=\"POST\">\n      <input type=\"hidden\" name=\"Title\" value=\"<span class=\"vulners-highlight\">abcd</span>",
+            "\" />\n      <input type=\"hidden\" name=\"Tags\" value=\"<span class=\"vulners-highlight\">abcd</span>\" />\n      <input type=\"hidden\" name=\"ExplainHover\" value=\"\" />\n      <input type=\"hidden\" name=\"Delay\" value=\"0\" />\n      <input type=\"hidden\" name"
+          ]
+        },
+        "sort": [
+          6.751111e-14,
+          1642162065000
+        ],
+        "flatDescription": "Description A CSRF issue is found in the Settings&gt;Live help configuration&gt;Canned Messages. It was found that no CSRF token validation is getting done as no CSRF token is getting passed with the request. Also while generating statistics, the action is done through GET method with no CSRF token. Two..."
+      },
+      {
+        "_index": "es6_bulletins_bulletin_v3",
+        "_type": "_doc",
+        "_id": "SRC-2021-0029",
+        "_score": 1.1004848e-18,
+        "_source": {
+          "lastseen": "2022-04-20T17:15:20",
+          "description": "**Vulnerability Details:**\n\nThis vulnerability allows remote attackers to bypass authentication on affected installations of Dedecms. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the GetCookie function. The issue results from a loose comparison check when verifying incoming authenticated requests. An attacker can leverage this vulnerability to bypass authentication on the system as a member user.\n\n**Affected Vendors:**\n\nDedecms\n\n**Affected Products:**\n\nDedecms &lt;= v5.7.84 release\n\n**Vendor Response:**\n\nDedecms has not issued an update to correct this vulnerability.\n",
+          "cvss3": {},
+          "published": "2021-10-21T00:00:00",
+          "type": "srcincite",
+          "title": "SRC-2021-0029 : Dedecms GetCookie Type Juggling Authentication Bypass Vulnerability",
+          "bulletinFamily": "exploit",
+          "cvss2": {},
+          "cvelist": [],
+          "modified": "2021-11-22T00:00:00",
+          "id": "SRC-2021-0029",
+          "href": "https://srcincite.io/advisories/src-2021-0029/",
+          "sourceData": "#!/usr/bin/python3",
+          "cvss": {
+            "score": 0.0,
+            "vector": "NONE"
+          },
+          "sourceHref": "https://srcincite.io/pocs/src-2021-0029.py.txt",
+          "vhref": "https://vulners.com/srcincite/SRC-2021-0029"
+        },
+        "highlight": {
+          "sourceData": [
+            "echo_validate_image($config))\n{\n    // 如果不成功则初始化一个默认验证码\n    @session_start();\n    $_SESSION['securimage_code_value'] = strtolower('<span class=\"vulners-highlight\">abcd</span>');\n    $im = @imagecreatefromjpeg(dirname(__FILE__).'",
+            "s.update(r.content)\n    if (s.hexdigest() == \"c9393ece94bee5f61066a938894e6744b7a18fff\"):\n        match = re.search(\"PHPSESSID=(.*);\", r.headers['set-cookie'])\n        if match:\n            return [\"<span class=\"vulners-highlight\">abcd</span>"
+          ]
+        },
+        "sort": [
+          1.1004848e-18,
+          1634774400000
+        ],
+        "flatDescription": "Vulnerability Details: This vulnerability allows remote attackers to bypass authentication on affected installations of Dedecms. Authentication is not required to exploit this vulnerability. The specific flaw exists within the GetCookie function. The issue results from a loose comparison check..."
+      },
+      {
+        "_index": "es6_bulletins_bulletin_v3",
+        "_type": "_doc",
+        "_id": "OS_FINGERPRINT_MSRPRC.NASL",
+        "_score": 2.7158913e-23,
+        "_source": {
+          "lastseen": "2021-10-14T16:33:17",
+          "description": "This plugin attempts to identify the operating system type and version by connecting to the remote Microsoft Remote Procedure Call (MSRPC) server.",
+          "cvss3": {},
+          "published": "2007-05-19T00:00:00",
+          "type": "nessus",
+          "title": "OS Identification : MSRPC",
+          "bulletinFamily": "scanner",
+          "cvss2": {},
+          "cvelist": [],
+          "modified": "2021-10-13T00:00:00",
+          "cpe": [],
+          "id": "OS_FINGERPRINT_MSRPRC.NASL",
+          "href": "https://www.tenable.com/plugins/nessus/25248",
+          "sourceData": "#\n# (C) Tenable Network Security, Inc.",
+          "cvss": {
+            "score": 0.0,
+            "vector": "NONE"
+          },
+          "vhref": "https://vulners.com/nessus/OS_FINGERPRINT_MSRPRC.NASL"
+        },
+        "highlight": {
+          "sourceData": [
+            "include(\"smb_func.inc\");\n\nfunction GetOSVersion ()\n{\n local_var fid, data, rep, name;\n local_var platformid, csd, major, minor, build, ret, handle;\n\n fid = bind_pipe (pipe:\"\\spoolss\", uuid:\"12345678-1234-<span class=\"vulners-highlight\">abcd</span>-ef00"
+          ]
+        },
+        "sort": [
+          2.7158913e-23,
+          1179532800000
+        ],
+        "flatDescription": "This plugin attempts to identify the operating system type and version by connecting to the remote Microsoft Remote Procedure Call (MSRPC) server. # (C) Tenable Network Security, Inc.  include(&quot;compat.inc&quot;); if (description) {   script_id(25248);   script_version(&quot;1.44&quot;);  ..."
+      },
+      {
+        "_index": "es6_bulletins_bulletin_v3",
+        "_type": "_doc",
+        "_id": "DCETEST.NASL",
+        "_score": 4.54308e-24,
+        "_source": {
+          "lastseen": "2021-10-06T09:14:58",
+          "description": "By sending a Lookup request to the portmapper (TCP 135 or epmapper PIPE) it was possible to enumerate the Distributed Computing Environment (DCE) services running on the remote port. Using this information it is possible to connect and bind to each service by sending an RPC request to the remote port/pipe.",
+          "cvss3": {},
+          "published": "2001-08-26T00:00:00",
+          "type": "nessus",
+          "title": "DCE Services Enumeration",
+          "bulletinFamily": "scanner",
+          "cvss2": {},
+          "cvelist": [],
+          "modified": "2021-10-04T00:00:00",
+          "cpe": [],
+          "id": "DCETEST.NASL",
+          "href": "https://www.tenable.com/plugins/nessus/10736",
+          "sourceData": "#\n# (C) Tenable Network Security, Inc.",
+          "cvss": {
+            "score": 0.0,
+            "vector": "NONE"
+          },
+          "vhref": "https://vulners.com/nessus/DCETEST.NASL"
+        },
+        "highlight": {
+          "sourceData": [
+            "rpc_info = NULL;\nip_address = NULL;\n\n# Microsoft\n# This list comes from the amazing documents from Jean-Baptiste Marchand :\n# http://www.hsc.fr/ressources/articles/win_net_srv/\n\nrpc_info[\"12345778-1234-<span class=\"vulners-highlight\">abcd</span>-ef00",
+            "-0123456789ab\"] = \"lsarpc|Local Security Authority|lsass.exe\";\nrpc_info[\"3919286a-b10c-11d0-9ba8-00c04fd92ef5\"] = \"dssetup|Domain Server Interface|lsass.exe\";\nrpc_info[\"12345778-1234-<span class=\"vulners-highlight\">abcd</span>-ef00-0123456789ac",
+            "\"] = \"samr|Security Account Manager|lsass.exe\";\nrpc_info[\"12345678-1234-<span class=\"vulners-highlight\">abcd</span>-ef00-01234567cffb\"] = \"netlogon|Network Logon Service|lsass.exe\";\nrpc_info[\"6bffd098-a112-3610-9833-012892020162\"] = \"browser",
+            "= \"ROUTER|Routing and Remote Access service|svchost.exe\";\nrpc_info[\"d335b8f6-cb31-11d0-b0f9-006097ba4e54\"] = \"policyagent|IPsec Policy Agent service (Windows 2000)|lsass.exe\";\nrpc_info[\"12345678-1234-<span class=\"vulners-highlight\">abcd</span>-ef00"
+          ]
+        },
+        "sort": [
+          4.54308e-24,
+          998784000000
+        ],
+        "flatDescription": "By sending a Lookup request to the portmapper (TCP 135 or epmapper PIPE) it was possible to enumerate the Distributed Computing Environment (DCE) services running on the remote port. Using this information it is possible to connect and bind to each service by sending an RPC request to the remote..."
+      },
+      {
+        "_index": "es6_bulletins_bulletin_v3",
+        "_type": "_doc",
+        "_id": "MS:D3B55E1B-40B5-45FC-ABCD-1ECDD8021AA0",
+        "_score": 1.7293825e-25,
+        "_source": {
+          "lastseen": "2022-04-04T17:18:09",
+          "description": "Install this update to resolve issues in Windows. For a complete listing of the issues that are included in this update, see the associated Microsoft Knowledge Base article for more information. After you install this item, you may have to restart your computer.",
+          "cvss3": {},
+          "published": "2021-09-14T17:01:09",
+          "type": "msupdate",
+          "title": "2021-09 Cumulative Update for Windows 10 Version 20H2 for ARM64-based Systems (KB5005565)",
+          "bulletinFamily": "microsoft",
+          "cvss2": {},
+          "cvelist": [],
+          "modified": "2021-09-14T17:01:09",
+          "id": "MS:D3B55E1B-40B5-45FC-ABCD-1ECDD8021AA0",
+          "href": "https://www.catalog.update.microsoft.com/ScopedViewInline.aspx?updateid=D3B55E1B-40B5-45FC-ABCD-1ECDD8021AA0",
+          "cvss": {
+            "score": 0.0,
+            "vector": "NONE"
+          },
+          "vhref": "https://vulners.com/msupdate/MS:D3B55E1B-40B5-45FC-ABCD-1ECDD8021AA0"
+        },
+        "highlight": {
+          "id": [
+            "MS:D3B55E1B-40B5-45FC-<span class=\"vulners-highlight\">ABCD</span>-1ECDD8021AA0"
+          ],
+          "href": [
+            "updateid=D3B55E1B-40B5-45FC-<span class=\"vulners-highlight\">ABCD</span>-1ECDD8021AA0"
+          ]
+        },
+        "sort": [
+          1.7293825e-25,
+          1631638869000
+        ],
+        "flatDescription": "Install this update to resolve issues in Windows. For a complete listing of the issues that are included in this update, see the associated Microsoft Knowledge Base article for more information. After you install this item, you may have to restart your..."
+      },
+      {
+        "_index": "es6_bulletins_bulletin_v3",
+        "_type": "_doc",
+        "_id": "MSF:EXPLOIT-WINDOWS-HTTP-PRTG_AUTHENTICATED_RCE-",
+        "_score": 5.9632487e-28,
+        "_source": {
+          "lastseen": "2022-11-02T13:31:44",
+          "description": "Notifications can be created by an authenticated user and can execute scripts when triggered. Due to a poorly validated input on the script name, it is possible to chain it with a user-supplied command allowing command execution under the context of privileged user. The module uses provided credentials to log in to the web interface, then creates and triggers a malicious notification to perform RCE using a Powershell payload. It may require a few tries to get a shell because notifications are queued up on the server. This vulnerability affects versions prior to 18.2.39. See references for more details about the vulnerability allowing RCE.\n",
+          "cvss3": {},
+          "published": "2021-01-18T11:01:44",
+          "type": "metasploit",
+          "title": "PRTG Network Monitor Authenticated RCE",
+          "bulletinFamily": "exploit",
+          "cvss2": {},
+          "cvelist": [],
+          "modified": "2021-08-27T16:19:43",
+          "id": "MSF:EXPLOIT-WINDOWS-HTTP-PRTG_AUTHENTICATED_RCE-",
+          "href": "https://www.rapid7.com/db/modules/exploit/windows/http/prtg_authenticated_rce/",
+          "sourceData": "##\n# This module requires Metasploit",
+          "sourceHref": "https://github.com/rapid7/metasploit-framework/blob/master//modules/exploits/windows/http/prtg_authenticated_rce.rb",
+          "cvss": {
+            "score": 0.0,
+            "vector": "NONE"
+          },
+          "vhref": "https://vulners.com/metasploit/MSF:EXPLOIT-WINDOWS-HTTP-PRTG_AUTHENTICATED_RCE-"
+        },
+        "highlight": {
+          "sourceData": [
+            "(%message)',\n          'active_9' => '0',\n          'urlsniselect_9' => '0',\n          'active_10' => '10',\n          'address_10' => 'Demo EXE Notification - OutFile.ps1',\n          'message_10' => \"<span class=\"vulners-highlight\">abcd</span>"
+          ]
+        },
+        "sort": [
+          5.9632487e-28,
+          1610967704000
+        ],
+        "flatDescription": "Notifications can be created by an authenticated user and can execute scripts when triggered. Due to a poorly validated input on the script name, it is possible to chain it with a user-supplied command allowing command execution under the context of privileged user. The module uses provided..."
+      }
+    ],
+    "exactMatch": null,
+    "references": null,
+    "total": 339,
+    "maxSearchSize": 100
+  }
+}
